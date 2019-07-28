@@ -1,0 +1,54 @@
+#container{
+    padding: 1.5em 1.8em;
+}
+
+mat-form-field {
+    margin-bottom: 0em;
+    width: 90%;
+    font-size: 12px;
+    transition: margin 0.3s;
+    color: #446E8E;
+}
+.mat-error { font-size: 109%}
+.mat-label { font-size: 104%}
+.to-sign-in{
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 1.5em;
+    color: gray;
+    .redirect{
+        margin: 3px;
+        font-size: 1.1em;
+    }
+}
+input[type=file]{
+    display: none;
+}
+.upload-section{
+    margin-top: 15px;
+}
+.upload-btn{
+    cursor: pointer;
+    border: solid 1px #446E8E;
+    color: #446E8E;
+    opacity: 0.7;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: all 0.2s;
+    &:hover{
+        background: #446E8E;
+        color: white;
+        opacity: 1;
+    }
+    &:active{
+        opacity: 0.7 !important;
+    }
+}
+
+.user-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

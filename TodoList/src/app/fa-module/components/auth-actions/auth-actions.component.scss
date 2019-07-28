@@ -1,0 +1,13 @@
+button {
+    margin: 4px
+}
+.auth-action {
+    display: inline-block;
+    .auth-info {
+        margin-left: 7px; 
+        .profile-picture {
+            width: 30px;
+            margin: 10px;
+        }
+    }
+}

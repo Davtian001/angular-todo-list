@@ -1,0 +1,37 @@
+
+
+
+<section *ngIf="tasks$ | async as taskRows">
+    <!-- Header -->
+    <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+        
+                    <mat-panel-title><b>Name</b></mat-panel-title>
+                    <mat-panel-title><b>Created</b></mat-panel-title>
+                    <mat-panel-title><b>DedLine</b></mat-panel-title>
+                    <mat-panel-title><b>Status</b></mat-panel-title>
+
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+            <h4 class="empty-list" *ngIf="!taskRows.length">Add your First Task</h4>
+        </mat-accordion>
+
+        
+        <!-- Single Tasks -->
+    <app-single-task 
+    *ngFor="let taskRow of taskRows; trackBy:taskRow?.id"
+    [taskRow]="taskRow"
+    (deleteTask)="deleteTask($event)"
+    (toggleTask)="toggleTask($event)"
+    (editedTask)="editedTask($event)"
+    >
+</app-single-task>
+<br>
+<hr>
+<add-task-panel [tasks]="taskRows"></add-task-panel>
+
+</section>
+
+
+<!-- <button (click)="f">add Test task complete</button> -->

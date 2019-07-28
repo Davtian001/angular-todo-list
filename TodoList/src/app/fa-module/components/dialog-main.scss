@@ -1,0 +1,94 @@
+
+.title{
+    color: #446E8E;
+    font-variant: small-caps;
+}
+
+.submit-btn{
+    outline: none;
+    margin-top: 20px;
+    background: #446E8E;
+    color: white;
+    transition: background 0.3s;
+}
+
+.wide-btn{
+    width: 100%;
+}
+
+.invalid-hover{
+    &:hover{
+        background: rgb(218, 179, 179);
+    }
+}
+
+.privacy-info {     
+    font-style: italic;
+    text-align: center;
+    display: inline-block;
+    color: #446E8E;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.close {
+    color: #446E8E;
+    outline: none;
+    transition: color 0.5s;
+    &:hover{
+        color: rgb(185, 52, 52);
+    }
+}
+
+
+.icon{
+    height: 15px;
+    width: 15px;
+    opacity: 0.7;
+}
+
+.mat-progress-bar{
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+}
+hr{
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+input.ng-invalid.ng-touched{
+    color: rgb(185, 52, 52)
+}
+.invalid-icon{
+    color: rgb(185, 52, 52)
+}
+
+mat-icon{
+    cursor: pointer;
+    user-select: none;
+}
+
+.indent{
+    margin-bottom: 0.5em;
+}
+
+.sticky{
+    position: sticky;
+    top: 0.5em;
+}
+.content{
+    padding: 0 1.5em;
+}
+
+.redirect{
+    transition: 0.3s;
+    color: rgb(0, 115, 255);
+    cursor: pointer;
+    &:hover{
+        text-shadow: 1px 1px 3px rgb(148, 148, 148);
+        color: #446E8E;
+    }
+    &:active{
+        color: rgb(119, 171, 211);
+    }
+}

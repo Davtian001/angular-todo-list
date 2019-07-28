@@ -1,0 +1,89 @@
+<div id="container">
+
+
+ <!-- Close-btn -->
+<button 
+  class="close sticky" type="button" matTooltip="Close"
+  tabindex="-1"  mat-dialog-close
+>&times;</button>
+
+
+<!-- Title -->
+<h3 mat-dialog-title class="title" >
+  Sign-In
+</h3>
+
+<div class="content">
+
+<form autocomplete="off" [formGroup]="signInForm">
+
+  <!-- Email -->
+  <div class="sign-in-form">
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <mat-hint align="end">Type your valid e-mail</mat-hint>
+      <input formControlName="email" matInput>
+      <mat-error *ngIf="email.invalid">{{getErrorsEmail()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <!-- Password -->
+  <div class="sign-in-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <mat-hint align="end">You can reset your password below</mat-hint>
+      <input formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'">
+
+      <mat-error *ngIf="password.invalid">{{getErrorsPass()}}</mat-error>
+      
+      <mat-icon matSuffix (click)="hidePassword = !hidePassword" 
+       *ngIf="hidePassword" matTooltip="show password">{{'visibility_off'}}
+      </mat-icon>
+
+      <mat-icon matSuffix (click)="hidePassword = !hidePassword" 
+       *ngIf="!hidePassword" matTooltip="hide password">{{'visibility'}}
+      </mat-icon>
+
+    </mat-form-field>
+  </div>
+
+  <!-- Submit -->
+  <button
+    [disabled]="signInForm.invalid"
+    mat-raised-button
+    class="submit-btn wide-btn"
+    (click)="handleSignIn()"
+    >Sign-in
+  </button>
+
+</form>
+
+
+
+<!-- Additional actions -->
+<div class="additional-actions">
+  <div>
+    <!-- Remember me -->
+    <mat-checkbox 
+      [formControl]="rememberMe" 
+      [class.active]="rememberMe.value" 
+      class="remember-me" 
+      color="primary">Remeber me
+    </mat-checkbox>
+
+    <!-- Forgot password -->
+    <span class="forgot-pass redirect" (click)="toResetPassword()">Forgot Password ?</span>
+  </div>
+
+  <!-- To sign up -->
+  <div class="to-sign-up">
+    Don't have an account yet ? <span class="redirect" (click)="toSignUp()">Sign-up</span>
+  </div>
+
+</div>
+</div>
+</div>
+<hr class="line">
+
+<mat-progress-bar *ngIf="loggingIn" mode="indeterminate"></mat-progress-bar>

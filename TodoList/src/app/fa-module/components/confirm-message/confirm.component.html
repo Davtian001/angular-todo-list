@@ -1,0 +1,11 @@
+<div class="container">
+  <mat-dialog-content >
+    <div  class="message" *ngFor="let line of options.message, last as last" [class.indent]="last">{{ line }}</div>
+  </mat-dialog-content>
+
+  <hr>
+  <mat-dialog-actions class="actions">
+    <button (click)="options.accept()" mat-dialog-close mat-flat-button color="primary">{{options.okText || 'OK'}}</button>
+    <button mat-raised-button mat-dialog-close>{{options.cancelText || 'Cancel'}}</button>
+  </mat-dialog-actions>
+</div>

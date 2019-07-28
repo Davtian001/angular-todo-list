@@ -1,0 +1,38 @@
+<section class="add-task-section">
+  <button mat-raised-button color="primary" class="toggle-fields" (click)="hidTaskForm = !hidTaskForm"
+  *ngIf="!hidTaskForm"
+    type="submit">Create Task</button>
+
+
+  <div *ngIf="hidTaskForm">
+    <form [formGroup]="taskForm" (ngSubmit)="createTask()">
+
+      <!-- Date -->
+      <mat-form-field>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker1" placeholder="End Time"
+          formControlName="endTime">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+
+      <!-- Name -->
+      <mat-form-field>
+        <input formControlName="name" matInput placeholder="Name" required>
+        <mat-error *ngIf="name.invalid">{{getErrorMessageName()}}</mat-error>
+      </mat-form-field>
+
+
+      <!-- Description -->
+      <mat-form-field>
+        <input formControlName="description" matInput placeholder="Description">
+        <mat-error *ngIf="description.invalid">{{getErrorMessageDescription()}}</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="submit" [disabled]="!taskForm.valid" type="submit">Add
+        Task</button>
+      <button mat-raised-button (click)="hidTaskForm = !hidTaskForm"> Cancel</button>
+    </form>
+
+  </div>
+</section>

@@ -1,0 +1,20 @@
+
+<div class="auth-action">
+
+
+  <button mat-raised-button color="primary" matTooltip="Sign-in with E-mail" *ngIf="!currentUser"
+  (click)="signIn()">SignIn</button>
+  
+  
+  <button mat-raised-button color="primary" matTooltip="Registrate now" *ngIf="!currentUser"
+  (click)="signUp()">SignUp</button>
+  
+  
+  <button mat-raised-button color="primary" matTooltip="Sign-out from account" *ngIf="currentUser"
+  (click)="logout()">SignOut</button>
+
+  <span class="auth-info" *ngIf="currentUser">
+      <span class="user-name">{{currentUser.displayName}}</span>
+      <img class="profile-picture" [src]="currentUser.photoUrl">
+    </span>
+</div>

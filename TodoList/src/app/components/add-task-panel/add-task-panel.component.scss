@@ -1,0 +1,16 @@
+
+.add-task-section {
+    float: right;
+    .toggle-fields {
+        float: right;
+    }
+    form {
+        mat-form-field {
+            margin: 12px !important;
+        }
+    .submit {
+        margin-left: 4px;
+        margin-right: 10px;
+    }
+    }
+}

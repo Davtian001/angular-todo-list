@@ -1,0 +1,53 @@
+
+.actions {
+    float: right;
+    margin: -21px -10px -10px;
+    outline: none;
+    mat-icon {
+        transition: 0.3s;
+        cursor: pointer;
+        margin: 2px;
+        font-size: 195%;
+        margin-left: 11px;
+        &:hover {
+            color: darkred;
+            transform: scale(1.1)
+        }
+    };
+}
+
+.completed {
+    background: aliceblue;
+}
+.time-out {
+    background: rgb(247, 183, 183);
+ }
+ .time-out-text {
+    color: red;
+    font-size: 110%;
+ }
+.form-fields{
+    .mat-form-field {
+        margin: 18px 4px 4px 5px;
+    }
+}
+.editing-actions {
+    button {
+        margin: 0px 4px;
+    }
+}
+.description {
+    // font-style: italic;
+    margin: 7px 0 3px;
+    .title {
+        font-size: 103%;
+        font-variant: small-caps;
+    }
+}
+.mat-menu-item {
+    outline: none;
+}
+.mat-icon-button  {
+    outline: none;
+
+}

@@ -1,0 +1,99 @@
+<mat-accordion >
+  <mat-expansion-panel [ngClass]="{'time-out': isTiemOutedTask, 'completed': taskRow.task.completed }">
+    <mat-expansion-panel-header>
+
+      <!-- Header -->
+      <mat-panel-title>
+        {{taskRow.task.name}}
+      </mat-panel-title>
+
+      <mat-panel-description>
+        {{taskRow.task.createdAt | date:'medium'}}
+      </mat-panel-description> 
+
+      <mat-panel-description>
+        {{taskRow.task.endTime | date:'MMM d, y'}}
+      </mat-panel-description>
+
+      <mat-panel-description>
+        <mat-icon>{{taskRow.task.completed ? 'done': 'hourglass_full'}}</mat-icon>
+      </mat-panel-description>
+
+    </mat-expansion-panel-header>
+
+
+
+    <!-- Menu Actions -->
+    <div class="actions">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="toggleEditingPanel()">
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
+
+        <button mat-menu-item (click)="deleteTaskById()">
+          <mat-icon>delete_forever</mat-icon>
+          <span>Delete</span>
+        </button>
+
+        <button *ngIf="!isTiemOutedTask" mat-menu-item (click)="toggleTaskStatus()">
+          <div [hidden]="taskRow.task.completed">
+            <mat-icon>done</mat-icon>
+            <span>Completed</span>
+          </div>
+          
+          <div [hidden]="!taskRow.task.completed">
+            <mat-icon>hourglass_full</mat-icon>
+            <span>Pending</span>
+          </div>
+
+        </button>
+
+      </mat-menu>
+    </div>
+
+
+
+    <!-- Description -->
+    <div class="description">
+      <span *ngIf="isTiemOutedTask" class="time-out-text">'Time out'</span> 
+      <div> <p class="title"> Description:</p>
+         {{ taskRow.task.description}}
+      </div>
+    </div>
+
+
+    <!-- Editing Panel -->
+    <section class="form-fields" [hidden]="!editingFields.editingState">
+
+      <mat-form-field>
+        <input [(ngModel)]="editingFields.editingName" matInput placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input [(ngModel)]="editingFields.editingDescription" matInput placeholder="Description">
+      </mat-form-field>
+
+    </section>
+
+
+    <div class="editing-actions" *ngIf="editingFields.editingState">
+      
+      <button 
+        [disabled]="!editingFields.editingName || !editingFields.editingDescription.length > 2"
+        mat-raised-button color="primary" 
+        (click)="confirmEditChanging()"
+        >Edit
+      </button>
+
+      <button mat-raised-button (click)="editingFields.editingState = false">Cancel</button>
+    </div>
+
+  </mat-expansion-panel>
+
+
+

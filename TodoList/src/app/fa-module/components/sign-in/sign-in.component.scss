@@ -1,0 +1,66 @@
+#container{
+    padding: 1.5em 1.2em;
+}
+
+mat-form-field {
+    width: 100%;
+    font-size: 12px;
+    transition: margin 0.3s;
+    color: #446E8E;
+}
+.forgot-pass{
+    float: right;
+    font-size: 0.9em;
+}
+.additional-actions{
+    margin-top: 2em;
+}
+.remember-me{
+    font-size: 0.75em;
+    color: gray;
+    transition: all 0.3s;
+}
+.active{
+    color: rgb(0, 115, 255);
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgb(189, 189, 189);
+}
+
+.to-sign-up{
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 1.5em;
+    color: gray;
+    .redirect{
+        margin: 3px;
+        font-size: 1.1em;
+    }
+}
+
+.notification{
+    float: left;
+    font-size: 12px;
+    color: white;
+    background: rgb(192, 123, 123);
+    border-top-right-radius: 10px;
+    padding: 0.3em;
+    padding-right: 0.8em;
+    text-indent: 1em;
+    font-family: sans-serif;
+}
+.loginNotification{
+    background: rgb(131, 192, 123)
+}
+.placeholder{
+    float: right;
+    font-size: 12px;
+    padding: 0.3em;
+}
+.line{
+    width: 90%;
+    margin: 10px auto;  
+}
+.indent{
+    margin-left: 1em;
+    margin-right: 0.5em;
+}
