@@ -1,5 +1,6 @@
 # Todo List
 
+## Production mode - https://davtian001.github.io/angular-todo-list-dist/
 
 ### Phase 1 done ###
 
