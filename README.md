@@ -3,8 +3,8 @@
 
 
 ### Screenshots
-* ![image2](https://i.ibb.co/bHGphh1/2.png)
-* ![image1](https://i.ibb.co/kDVBfp4/1.png)
+![image2](https://i.ibb.co/bHGphh1/2.png)
+![image1](https://i.ibb.co/kDVBfp4/1.png)
 
 
 
